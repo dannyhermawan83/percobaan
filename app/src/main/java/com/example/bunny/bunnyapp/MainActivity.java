@@ -2,6 +2,7 @@ package com.example.bunny.bunnyapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,9 +29,23 @@ public class MainActivity extends AppCompatActivity {
                 validate();
             }
         });
+
+        Log.d("onCycle","onCreate");
     }
 
     public void validate() {
         txtUsername.setText(txtPassword.length());
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("onCycle","onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("onCycle","onResume");
     }
 }
